@@ -1,0 +1,11 @@
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.5-flash",
+    google_api_key="YOUR_API_KEY"
+)
+
+if input_text:
+    chain = prompt | llm
+    response = chain.invoke({"question": input_text})
+    st.write(response.content)
